@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Registration</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
+            font-family:cursive;
+        }
+        .image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; 
+            height: 100%; 
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(19,183,214,1) 100%);
+        }
+        .image-container img {
+            width: 100%;
+            height: auto; 
+            max-height: 100%; 
+        }
+        .form-container {
+            flex: 0 0 700px; 
+            padding: 20px; 
+            box-sizing: border-box; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%; 
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(19,183,214,1) 100%);
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+        }
+        form {
+            width: 100%;
+        }
+        fieldset {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 2%;
+        }
+        legend {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; 
+        }
+        table td {
+            padding: 10px 0;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 100%; /* Full width for inputs */
+            box-sizing: border-box; 
+        }
+        .submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit:hover {
+            background-color: #45a049;
+        }
+        input:required {
+            border: 2px solid red;
+        }
+        input:optional {
+            border: 2px dashed green;
+        }
+
+        input[name="age"]:focus :in-range~img.valid
+        {
+display: inline;
+width: 18px;
+height: 18px;
+        }
+
+        p{
+            display: none;
+        }
+        input:hover+p{
+            display:inline;
+            color: rgb(15, 15, 15);
+            background-color: burlywood;
+            font-weight: 200;
+
+        }
+        input:focus{
+            background-color:grey ;
+            color: black;
+            font-weight: 200;
+        }
+        img.valid,img.invalid{
+            display: none;
+        }
+
+        input[type="email"]:focus:valid~img.valid{
+            display: inline;
+            height: 15px;
+            width:15px;
+        }
+        input[type="email"]:focus:invalid~img.invalid{
+            display: inline;
+            height: 15px;
+            width:15px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .form-container {
+                flex: 1; /* Allow the form to use more space on smaller screens */
+                padding: 10px; /* Adjust padding */
+            }
+            .submit {
+                padding: 10px; /* Adjust button padding */
+            }
+        }
+
+        @media (max-width: 480px) {
+            legend {
+                font-size: 1.2em; /* Adjust legend font size */
+            }
+            .submit {
+                padding: 8px; /* Adjust button padding */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <!-- <h1>welcome To our yoga</h1> -->
+        <img src="Screenshot 2024-12-26 223806.png" alt="Yoga Image">
+    </div>
+    <div class="form-container">
+        <form>
+            <fieldset>
+                <legend>Register</legend>
+                <table>
+                    <tr>
+                        <td>
+                            <label>First Name</label>
+                        </td>
+                        <td>
+                            <input type="text" name="fname" placeholder="Khushi" required>
+                            <p>Enter your Name</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Last Name</label>
+                        </td>
+                        <td>
+                            <input type="text" name="lname" placeholder="G N" optional>
+                            <p>Enter your Last Name</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Email</label>
+                        </td>
+                        <td>
+                            <input type="email" name="email" placeholder="xyz@gmail.com" required>
+                            <p>include Letters,Digits (0-9),atleast 1 Special characters</p>
+                            <img src="yes.png"  class="valid">
+                            <img src="no.jpg"  class="invalid">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Phone Number</label>
+                        </td>
+                        <td>
+                            <input type="tel" name="phone" placeholder="1234567890" required>
+                            <p>Enter Phone Number</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Gender</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="gender" value="M" required> Male
+                            <input type="radio" name="gender" value="F" required> Female
+                            <input type="radio" name="gender" value="O" required> Other
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Date of Birth</label>
+                        </td>
+                        <td>
+                            <input type="date" name="dob" required>
+                            <p>Enter your DOB</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Age</label>
+                        </td>
+                        <td>
+                            <input type="number" name="age"  min="18" max="100" required>
+                            <p>Enter your Age</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Mode</label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Online" readonly   >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Password</label>
+                        </td>
+                        <td>
+                            <input type="password" name="password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Confirm Password</label>
+                        </td>
+                        <td>
+                            <input type="password" name="re-password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label >Upload Picture</label>
+                        </td><td>
+                            <input type="file" name="picture" required>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="submit" class="submit">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
